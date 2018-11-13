@@ -93,7 +93,7 @@ namespace LoginPanel
                 {
                     if (user.password == textBox_password.Text)
                     {
-                        MessageBox.Show("You login");
+                        MessageBox.Show("Welcome!");
                         user.entryCount++;
                         dbl.SaveChanges();
                     }
