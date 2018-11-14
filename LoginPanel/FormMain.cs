@@ -45,37 +45,13 @@ namespace LoginPanel
 
         public static bool checkUsername(string s)
         {
-            var user = dbl.Account.Where(p => p.userName == s).FirstOrDefault();
+            var user = dbl.Account.Where(p => p.userName == s).Where(q => q.is_valid == "Y").FirstOrDefault();
 
             if (user != null)
                 return true;
 
             else
                 return false;
-        }
-
-        private void label_createAccount_Click(object sender, EventArgs e)
-        {
-            FormCreateAccount frmCA = new FormCreateAccount();
-            frmCA.ShowDialog();
-        }
-
-        private void label_resetPassword_Click(object sender, EventArgs e)
-        {
-            FormResetPassword frmRP = new FormResetPassword();
-            frmRP.ShowDialog();
-        }
-
-        private void label_UpdateAcc_Click(object sender, EventArgs e)
-        {
-            FormUpdateAccount frmUA = new FormUpdateAccount();
-            frmUA.ShowDialog();
-        }
-
-        private void label_deleteAcc_Click(object sender, EventArgs e)
-        {
-            FormDeleteAccount frmDA = new FormDeleteAccount();
-            frmDA.ShowDialog();
         }
 
         private void button_cancel_Click(object sender, EventArgs e)
@@ -93,9 +69,12 @@ namespace LoginPanel
                 {
                     if (user.password == textBox_password.Text)
                     {
-                        MessageBox.Show("Welcome!");
                         user.entryCount++;
                         dbl.SaveChanges();
+
+                        FormWelcome frmW = new FormWelcome();
+                        frmW.userName = user.name;
+                        frmW.ShowDialog();
                     }
 
                     else
@@ -129,6 +108,30 @@ namespace LoginPanel
                     textBox_password.Text = "";
                 }
             }
+        }
+
+        private void linkLabel_resetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormResetPassword frmRP = new FormResetPassword();
+            frmRP.ShowDialog();
+        }
+
+        private void linkLabel_createAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormCreateAccount frmCA = new FormCreateAccount();
+            frmCA.ShowDialog();
+        }
+
+        private void linkLabel_UpdateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormUpdateAccount frmUA = new FormUpdateAccount();
+            frmUA.ShowDialog();
+        }
+
+        private void linkLabel_deleteAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormDeleteAccount frmDA = new FormDeleteAccount();
+            frmDA.ShowDialog();
         }
     }
 }

@@ -28,53 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label_UpdateAcc = new System.Windows.Forms.Label();
-            this.label_createAccount = new System.Windows.Forms.Label();
-            this.label_resetPassword = new System.Windows.Forms.Label();
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.textBox_userName = new System.Windows.Forms.TextBox();
             this.button_login = new System.Windows.Forms.Button();
             this.label_password = new System.Windows.Forms.Label();
             this.label_userName = new System.Windows.Forms.Label();
             this.button_cancel = new System.Windows.Forms.Button();
-            this.label_deleteAcc = new System.Windows.Forms.Label();
+            this.linkLabel_resetPassword = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_createAccount = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_UpdateAccount = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_deleteAccount = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
-            // 
-            // label_UpdateAcc
-            // 
-            this.label_UpdateAcc.AutoSize = true;
-            this.label_UpdateAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label_UpdateAcc.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label_UpdateAcc.Location = new System.Drawing.Point(63, 172);
-            this.label_UpdateAcc.Name = "label_UpdateAcc";
-            this.label_UpdateAcc.Size = new System.Drawing.Size(104, 16);
-            this.label_UpdateAcc.TabIndex = 7;
-            this.label_UpdateAcc.Text = "Update Account";
-            this.label_UpdateAcc.Click += new System.EventHandler(this.label_UpdateAcc_Click);
-            // 
-            // label_createAccount
-            // 
-            this.label_createAccount.AutoSize = true;
-            this.label_createAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label_createAccount.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label_createAccount.Location = new System.Drawing.Point(173, 146);
-            this.label_createAccount.Name = "label_createAccount";
-            this.label_createAccount.Size = new System.Drawing.Size(99, 16);
-            this.label_createAccount.TabIndex = 6;
-            this.label_createAccount.Text = "Create Account";
-            this.label_createAccount.Click += new System.EventHandler(this.label_createAccount_Click);
-            // 
-            // label_resetPassword
-            // 
-            this.label_resetPassword.AutoSize = true;
-            this.label_resetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label_resetPassword.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label_resetPassword.Location = new System.Drawing.Point(63, 146);
-            this.label_resetPassword.Name = "label_resetPassword";
-            this.label_resetPassword.Size = new System.Drawing.Size(107, 16);
-            this.label_resetPassword.TabIndex = 5;
-            this.label_resetPassword.Text = "Reset Password";
-            this.label_resetPassword.Click += new System.EventHandler(this.label_resetPassword_Click);
             // 
             // textBox_password
             // 
@@ -135,28 +99,60 @@
             this.button_cancel.UseVisualStyleBackColor = true;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
-            // label_deleteAcc
+            // linkLabel_resetPassword
             // 
-            this.label_deleteAcc.AutoSize = true;
-            this.label_deleteAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label_deleteAcc.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label_deleteAcc.Location = new System.Drawing.Point(173, 172);
-            this.label_deleteAcc.Name = "label_deleteAcc";
-            this.label_deleteAcc.Size = new System.Drawing.Size(99, 16);
-            this.label_deleteAcc.TabIndex = 8;
-            this.label_deleteAcc.Text = "Delete Account";
-            this.label_deleteAcc.Click += new System.EventHandler(this.label_deleteAcc_Click);
+            this.linkLabel_resetPassword.AutoSize = true;
+            this.linkLabel_resetPassword.Location = new System.Drawing.Point(274, 156);
+            this.linkLabel_resetPassword.Name = "linkLabel_resetPassword";
+            this.linkLabel_resetPassword.Size = new System.Drawing.Size(84, 13);
+            this.linkLabel_resetPassword.TabIndex = 10;
+            this.linkLabel_resetPassword.TabStop = true;
+            this.linkLabel_resetPassword.Text = "Reset Password";
+            this.linkLabel_resetPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_resetPassword_LinkClicked);
+            // 
+            // linkLabel_createAccount
+            // 
+            this.linkLabel_createAccount.AutoSize = true;
+            this.linkLabel_createAccount.Location = new System.Drawing.Point(9, 156);
+            this.linkLabel_createAccount.Name = "linkLabel_createAccount";
+            this.linkLabel_createAccount.Size = new System.Drawing.Size(81, 13);
+            this.linkLabel_createAccount.TabIndex = 11;
+            this.linkLabel_createAccount.TabStop = true;
+            this.linkLabel_createAccount.Text = "Create Account";
+            this.linkLabel_createAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_createAccount_LinkClicked);
+            // 
+            // linkLabel_UpdateAccount
+            // 
+            this.linkLabel_UpdateAccount.AutoSize = true;
+            this.linkLabel_UpdateAccount.Location = new System.Drawing.Point(96, 156);
+            this.linkLabel_UpdateAccount.Name = "linkLabel_UpdateAccount";
+            this.linkLabel_UpdateAccount.Size = new System.Drawing.Size(85, 13);
+            this.linkLabel_UpdateAccount.TabIndex = 12;
+            this.linkLabel_UpdateAccount.TabStop = true;
+            this.linkLabel_UpdateAccount.Text = "Update Account";
+            this.linkLabel_UpdateAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_UpdateAccount_LinkClicked);
+            // 
+            // linkLabel_deleteAccount
+            // 
+            this.linkLabel_deleteAccount.AutoSize = true;
+            this.linkLabel_deleteAccount.Location = new System.Drawing.Point(187, 156);
+            this.linkLabel_deleteAccount.Name = "linkLabel_deleteAccount";
+            this.linkLabel_deleteAccount.Size = new System.Drawing.Size(81, 13);
+            this.linkLabel_deleteAccount.TabIndex = 13;
+            this.linkLabel_deleteAccount.TabStop = true;
+            this.linkLabel_deleteAccount.Text = "Delete Account";
+            this.linkLabel_deleteAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_deleteAccount_LinkClicked);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 204);
-            this.Controls.Add(this.label_deleteAcc);
+            this.ClientSize = new System.Drawing.Size(384, 211);
+            this.Controls.Add(this.linkLabel_deleteAccount);
+            this.Controls.Add(this.linkLabel_UpdateAccount);
+            this.Controls.Add(this.linkLabel_createAccount);
+            this.Controls.Add(this.linkLabel_resetPassword);
             this.Controls.Add(this.button_cancel);
-            this.Controls.Add(this.label_UpdateAcc);
-            this.Controls.Add(this.label_createAccount);
-            this.Controls.Add(this.label_resetPassword);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_userName);
             this.Controls.Add(this.button_login);
@@ -171,17 +167,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label_UpdateAcc;
-        private System.Windows.Forms.Label label_createAccount;
-        private System.Windows.Forms.Label label_resetPassword;
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.TextBox textBox_userName;
         private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.Label label_password;
         private System.Windows.Forms.Label label_userName;
         private System.Windows.Forms.Button button_cancel;
-        private System.Windows.Forms.Label label_deleteAcc;
+        private System.Windows.Forms.LinkLabel linkLabel_resetPassword;
+        private System.Windows.Forms.LinkLabel linkLabel_createAccount;
+        private System.Windows.Forms.LinkLabel linkLabel_UpdateAccount;
+        private System.Windows.Forms.LinkLabel linkLabel_deleteAccount;
     }
 }
 
